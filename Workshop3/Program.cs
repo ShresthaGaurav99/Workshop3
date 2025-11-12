@@ -68,6 +68,45 @@ class Program
                 Console.WriteLine("Invalid day number");
                 break;
         }
+        //Task5
+        Console.Write("Enter a number (N): ");
+        int N = Convert.ToInt32(Console.ReadLine());
+        int sum = 0;
+
+        for (int i = 1; i <= N; i++)
+        {
+            sum += i;
+        }
+        Console.WriteLine($"Sum from 1 to {N} = {sum}");
+
+        Console.WriteLine("\nNumbers from 1 to 20 (skip multiples of 4, stop at 15):");
+        int number = 1;
+
+        while (number <= 20)
+        {
+            if (number == 15)
+                break;
+
+            if (number % 4 == 0)
+            {
+                number++;
+                continue;
+            }
+
+            Console.WriteLine(number);
+            number++;
+        }
+
+        int[] numbers = { 5, 10, 15, 20, 25 };
+        int total = 0;
+
+        foreach (int num in numbers)
+        {
+            total += num;
+        }
+
+        Console.WriteLine($"\nSum of all elements in the array = {total}");
+        Console.ReadLine();
 
     }
 }
