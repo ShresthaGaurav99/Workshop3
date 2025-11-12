@@ -1,38 +1,18 @@
 ﻿using System;
 
-public class Operators
+class Program
 {
-    // Method to add two numbers
-    public void Add(int a, int b)
+    static void Main(string[] args)
     {
-        Console.WriteLine($"Sum: {a + b}");
-    }
+        Operators op = new Operators();
 
-    // Method to subtract two numbers
-    public void Subtract(int a, int b)
-    {
-        Console.WriteLine($"Difference: {a - b}");
-    }
+        op.Add(10, 5);
+        op.Subtract(10, 5);
+        op.Multiply(10, 5);
+        op.Divide(10, 5);
+        op.OddEvenFinder(10);
+        op.OddEvenFinder(7);
 
-    // Method to multiply two numbers
-    public void Multiply(int a, int b)
-    {
-        Console.WriteLine($"Product: {a * b}");
-    }
-
-    // Method to divide two numbers
-    public void Divide(int a, int b)
-    {
-        if (b != 0)
-            Console.WriteLine($"Division Result: {(double)a / b}");
-        else
-            Console.WriteLine("Cannot divide by zero!");
-    }
-
-    // Method to determine Odd or Even using ternary operator
-    public void OddEvenFinder(int number)
-    {
-        string result = (number % 2 == 0) ? "Even Number" : "Odd Number";
-        Console.WriteLine(result);
+        Console.ReadLine(); // To keep console open
     }
 }
