@@ -1,25 +1,48 @@
 ﻿using System;
 
-class PasswordCheck
+namespace Task1
 {
-    static void Main(string[] args)
+    public class ExceptionHandlingTasks
     {
-        Console.Write("Enter your password: ");
-        string password = Console.ReadLine();
-
-        try
+        // Number conversion with exception handling
+        public void ConvertToInteger()
         {
-            if (password.Length < 6)
+            try
             {
-                throw new Exception("Password must be at least 6 characters.");
+                Console.Write("Enter a number: ");
+                string input = Console.ReadLine();
+                int number = Convert.ToInt32(input);
+                Console.WriteLine($"Converted Number: {number}");
             }
-            Console.WriteLine("Password satisfied the requirement");
-        }
-        catch (Exception ex)
-        {
-            Console.WriteLine(ex.Message);
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid number format");
+            }
+            finally
+            {
+                Console.WriteLine("Program Executed");
+            }
         }
 
-        Console.ReadLine();
+        // Password length validation with 'throw'
+        public void CheckPassword()
+        {
+            Console.Write("Enter your password: ");
+            string password = Console.ReadLine();
+
+            try
+            {
+                if (password.Length < 6)
+                {
+                    throw new Exception("Password must be at least 6 characters.");
+                }
+
+                Console.WriteLine("Password satisfied the requirement");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }

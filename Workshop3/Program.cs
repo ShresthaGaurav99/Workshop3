@@ -1,4 +1,5 @@
 ﻿using System;
+using Task1;
 
 class Program
 {
@@ -108,5 +109,16 @@ class Program
         Console.WriteLine($"\nSum of all elements in the array = {total}");
         Console.ReadLine();
 
+        // Task 6
+        ExceptionHandlingTasks tasks = new ExceptionHandlingTasks();
+
+        // Call both methods
+        tasks.ConvertToInteger();
+        Console.WriteLine(); // spacing
+
+        tasks.CheckPassword();
     }
+
+        
+    
 }
